@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodZone | Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">♛ FoodZone</a>
+
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#menu">Menu</a>
+            <a href="#apropos">À propos</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="accueil">
+            <div class="hero-content">
+                <span class="small-title">BIENVENUE CHEZ FOODZONE</span>
+                <h1>Le goût de la <span>perfection</span></h1>
+                <p>Découvrez des plats délicieux préparés avec passion.</p>
+
+                <a href="#menu" class="hero-btn">Découvrir le menu</a>
+
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Rechercher un plat..."
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section" id="menu">
+            <div class="section-heading">
+                <span class="small-title">NOTRE SÉLECTION</span>
+                <h2>Notre <span>Menu</span></h2>
+                <p>Choisissez votre plat préféré.</p>
+            </div>
+
+            <!-- Filtrage et tri ajoutés par Hiba -->
+            <div class="filters">
+                <select id="categoryFilter" aria-label="Filtrer par catégorie">
+                    <option value="all">Toutes les catégories</option>
+                    <option value="Pizza">Pizza</option>
+                    <option value="Burger">Burger</option>
+                    <option value="Tacos">Tacos</option>
+                    <option value="Pâtes">Pâtes</option>
+                    <option value="Salade">Salade</option>
+                    <option value="Sushi">Sushi</option>
+                    <option value="Marocain">Marocain</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Poulet">Poulet</option>
+                    <option value="Boisson">Boisson</option>
+                </select>
+
+                <select id="sortPrice" aria-label="Trier par prix">
+                    <option value="default">Trier par prix</option>
+                    <option value="asc">Prix croissant</option>
+                    <option value="desc">Prix décroissant</option>
+                </select>
+            </div>
+
+            <div id="menuPlats" class="menu"></div>
+        </section>
+
+        <section class="about" id="apropos">
+            <span class="small-title">À PROPOS DE NOUS</span>
+            <h2>La passion du <span>bon goût</span></h2>
+            <p>
+                Chez FoodZone, nous proposons une variété de plats
+                pour satisfaire toutes vos envies, avec des ingrédients
+                soigneusement sélectionnés.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 FoodZone - Tous droits réservés.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
