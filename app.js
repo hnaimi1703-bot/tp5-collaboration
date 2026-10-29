@@ -1,5 +1,4 @@
-
-const plats = [ // Modification Hiba
+const plats = [
     {
         id: 1,
         nom: "Pizza Margherita",
