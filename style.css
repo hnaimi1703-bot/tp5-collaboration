@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --black: #080b0e;
+    --dark: #10151a;
+    --gold: #f3c65e;
+    --white: #ffffff;
+    --gray: #b8bec5;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--black);
+    color: var(--white);
+}
+
+header {
+    background: #090c0f;
+    border-bottom: 1px solid #302718;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.hero {
+    min-height: 300px;
+    padding: 55px 8%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.25)),
+        url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 6vw, 65px);
+    margin: 12px 0;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    color: #e4e4e4;
+    margin-bottom: 22px;
+    font-size: 17px;
+}
+
+.hero input {
+    width: min(480px, 100%);
+    padding: 15px 20px;
+    border: 1px solid var(--gold);
+    border-radius: 30px;
+    background: #10151ae8;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.menu-section {
+    max-width: 1250px;
+    margin: 35px auto;
+    padding: 0 22px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-title span {
+    color: var(--gold);
+}
+
+.section-title p {
+    color: var(--gray);
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.plat-card {
+    background: linear-gradient(145deg, #151b20, #090d10);
+    border: 1px solid #38332a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform .3s, border-color .3s;
+}
+
+.plat-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+}
+
+.plat-image {
+    height: 180px;
+    overflow: hidden;
+    background: #20252a;
+}
+
+.plat-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s;
+}
+
+.plat-card:hover .plat-image img {
+    transform: scale(1.06);
+}
+
+.plat-info {
+    padding: 16px;
+}
+
+.badge {
+    display: inline-block;
+    color: var(--gold);
+    border: 1px solid #665127;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.plat-info h3 {
+    margin-bottom: 9px;
+    font-family: Georgia, serif;
+    font-size: 19px;
+}
+
+.description {
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.6;
+    min-height: 40px;
+}
+
+.plat-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.prix {
+    color: var(--gold);
+    font-size: 19px;
+    font-weight: bold;
+}
+
+button {
+    background: var(--gold);
+    color: #111;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: white;
+    transform: scale(1.04);
+}
+
+footer {
+    margin-top: 50px;
+    padding: 25px;
+    background: #090c0f;
+    border-top: 1px solid #38332a;
+    text-align: center;
+    color: var(--gray);
+}
+
+footer span {
+    color: var(--gold);
+}
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 45px 6%;
+    }
+
+    .menu {
+        grid-template-columns: 1fr;
+    }
+}
