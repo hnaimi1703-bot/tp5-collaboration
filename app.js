@@ -1,4 +1,3 @@
-
 const plats = [
     {
         id: 1,
@@ -13,7 +12,7 @@ const plats = [
         nom: "Burger Cheese",
         categorie: "Burger",
         prix: 40,
-        description: "Steak haché, cheddar, salade et sauce maison.",
+        description: "Steak haché, cheddar et sauce maison.",
         image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80"
     },
     {
@@ -29,7 +28,7 @@ const plats = [
         nom: "Pâtes Bolognaise",
         categorie: "Pâtes",
         prix: 50,
-        description: "Pâtes savoureuses, sauce tomate et viande.",
+        description: "Pâtes, sauce tomate et viande.",
         image: "https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?auto=format&fit=crop&w=700&q=80"
     },
     {
@@ -45,7 +44,7 @@ const plats = [
         nom: "Sushi",
         categorie: "Sushi",
         prix: 60,
-        description: "Riz, poisson et ingrédients frais.",
+        description: "Riz et ingrédients frais.",
         image: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=700&q=80"
     },
     {
@@ -61,7 +60,7 @@ const plats = [
         nom: "Gâteau au chocolat",
         categorie: "Dessert",
         prix: 25,
-        description: "Un délicieux dessert au chocolat.",
+        description: "Un dessert gourmand au chocolat.",
         image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80"
     },
     {
@@ -84,6 +83,10 @@ const plats = [
 
 const menu = document.getElementById("menuPlats");
 const searchInput = document.getElementById("searchInput");
+
+// Ajouts de Hiba
+const categoryFilter = document.getElementById("categoryFilter");
+const sortPrice = document.getElementById("sortPrice");
 
 function afficherPlats(liste) {
     menu.innerHTML = "";
@@ -116,9 +119,7 @@ function afficherPlats(liste) {
             </div>
         `;
 
-        const bouton = carte.querySelector(".ajouter-btn");
-
-        bouton.addEventListener("click", function () {
+        carte.querySelector(".ajouter-btn").addEventListener("click", function () {
             alert(plat.nom + " ajouté à votre sélection !");
         });
 
@@ -133,19 +134,38 @@ function afficherPlats(liste) {
     });
 }
 
+// Recherche, filtrage et tri
 function rechercherPlats() {
     const recherche = searchInput.value.toLowerCase().trim();
+    const categorie = categoryFilter.value;
+    const tri = sortPrice.value;
 
-    const resultats = plats.filter(function (plat) {
-        return (
+    let resultats = plats.filter(function (plat) {
+        const correspondRecherche =
             plat.nom.toLowerCase().includes(recherche) ||
-            plat.categorie.toLowerCase().includes(recherche)
-        );
+            plat.categorie.toLowerCase().includes(recherche);
+
+        const correspondCategorie =
+            categorie === "all" || plat.categorie === categorie;
+
+        return correspondRecherche && correspondCategorie;
     });
+
+    if (tri === "asc") {
+        resultats.sort(function (a, b) {
+            return a.prix - b.prix;
+        });
+    } else if (tri === "desc") {
+        resultats.sort(function (a, b) {
+            return b.prix - a.prix;
+        });
+    }
 
     afficherPlats(resultats);
 }
 
 searchInput.addEventListener("input", rechercherPlats);
+categoryFilter.addEventListener("change", rechercherPlats);
+sortPrice.addEventListener("change", rechercherPlats);
 
 afficherPlats(plats);
