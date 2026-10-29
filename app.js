@@ -1,4 +1,4 @@
-const plats = [
+const plats = [ // Modification Ghalia
     {
         id: 1,
         nom: "Pizza Margherita",
