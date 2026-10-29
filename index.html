@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FoodZone, découvrez une cuisine délicieuse dans un cadre élégant.">
+    <title>FoodZone | Restaurant Gastronomique</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo" style="text-decoration:none;">
+            ♛ FoodZone
+        </a>
+
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#menu">Menu</a>
+            <a href="#apropos">À propos</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div>
+                <p>Bienvenue chez</p>
+                <h1>Food<span>Zone</span></h1>
+                <p>Des plats savoureux, préparés avec passion ♥</p>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="⌕  Rechercher un plat..."
+                    aria-label="Rechercher un plat"
+                >
+            </div>
+        </section>
+
+        <section class="menu-section" id="menu">
+            <div class="section-title">
+                <h2>Notre <span>Menu</span></h2>
+                <p>Une expérience gourmande, une saveur inoubliable.</p>
+            </div>
+
+            <div id="menuPlats" class="menu">
+                <!-- Les plats seront ajoutés par JavaScript -->
+            </div>
+        </section>
+
+        <section class="menu-section" id="apropos">
+            <div class="section-title">
+                <h2>À propos de <span>nous</span></h2>
+                <p>
+                    Chez FoodZone, nous vous proposons une variété de plats
+                    délicieux, préparés avec soin pour satisfaire toutes vos envies.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>♛ <span>FoodZone</span> — © 2026 Tous droits réservés.</p>
+        <p style="margin-top: 10px;">Une expérience culinaire exceptionnelle ♥</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
